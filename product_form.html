@@ -1,0 +1,47 @@
+
+<html>
+
+
+
+<div class ="container text-center">
+<div><h1><b>Products In the Vending Machine Available </b>s</h1></div>
+
+<h2>Select the Product by pressing Enter Key </h2>
+<h3>Kindly enter the coins of 1Rs 2Rs 5Rs 10rs </h3>
+<table class="table table-bordered">
+    
+      <thead class="thead-dark">
+
+          <tr>       
+                  <th >Product Name  </th>
+                 <th >Product Cost </th>
+                                
+          </tr>
+
+    </thead>
+
+<tbody>
+
+
+<tr th:each ="product :${listproduct}">
+
+<td th:text="${product.productName}"></td> 
+<td th:text="${product.cost}"></td> 
+
+
+<td> <a th:href="@{/manipulateCoin/{coin}(coin=${product.cost})}" class="btn btn-primary">ENTER</a>
+
+</tr>
+<h3>Cancel the Product</h3>
+<a th:href="@{/cancelProduct/{id}{cost}(cost=${product.cost})(id=${product.id})}" class="btn btn-primary">Cancel</a>
+
+
+</tbody>
+</table>
+</div>
+<h3>Navigation to Suppliers Account</h3>
+<a th:href="@{/suppliersAccount} class="btn btn-primary">Suppliers </a>
+
+
+</html>
+

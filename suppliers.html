@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Page </title>
+</head>
+<body>
+
+<h1><center></h1> Suppliers Page></center> </p>
+
+
+
+
+<table class="table table-bordered">
+    
+      <thead class="thead-dark">
+
+    </thead>
+
+<tbody>
+
+
+<tr th:each ="product :${listproduct}">
+
+<td th:text="${product.productName}"></td> 
+<td th:text="${product.cost}"></td> 
+
+ <h3>1.Enter coins to be added</h1> 
+ <input type="text" th:field="*{cost}" class="form-control" required />
+<td> <a th:href="@{/SaveCoin/{coin}(coin=${product.cost})}" class="btn btn-primary">Add Coins</a>
+
+<h3>2.Enter the coins to be taken from machine<h1>
+ <input type="text" th:field="*{cost}" class="form-control" required />
+<td><a th:href="@{/TakeOutCoin/{cost}(cost=${product.cost})}" class="btn btn-primary">Take Out Coins</a>
+
+
+</tbody>
+</table>
+<h3>3.Enter the product name to be entered in the machine<h1>
+ <input type="text" th:field="*{productname}" class="form-control" required />
+<td> <a th:href="@{/product/save/{productName}(productName=${product.productName})}" class="btn btn-primary">Add products</a>
+<h3>Navigate to main page </h3>
+
+
+
+
+
+</body>
+</html>
